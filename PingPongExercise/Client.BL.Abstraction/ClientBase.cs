@@ -6,13 +6,13 @@ namespace Client.BL.Abstraction
     {
         public bool IsConnected { get; private set; }
 
-        public abstract Task<bool> Connect();
+        public abstract bool Connect();
 
-        public abstract Task Disconnect();
+        public abstract void Disconnect();
 
-        public abstract Task SendData(byte[] data);
+        public abstract void SendData(byte[] data);
 
-        public abstract Task<byte[]> ReadData();
+        public abstract byte[] ReadData();
 
     }
 }

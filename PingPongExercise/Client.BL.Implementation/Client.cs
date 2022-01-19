@@ -7,27 +7,71 @@ namespace Client.BL.Implementation
     class Client : ClientBase
     {
         private Socket _socket;
-
         
-
-        public override bool Connect()
+        public Client()
         {
-            _socket.Connect()
+            _socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+            IsConnected = false;
+        }
+
+        public override bool Connect(IPAddress address, int port)
+        {
+            try
+            {
+                _socket.Connect(address, port);
+            }
+            catch(SocketException)
+            {
+                return false;
+            }
+
+            IsConnected = true;
+            return true;
         }
 
         public override void Disconnect()
         {
-            throw new System.NotImplementedException();
+            try
+            {
+                _socket.Disconnect(false);
+                IsConnected = false;
+            }
+            catch (SocketException)
+            {
+                // output to log
+            }
         }
 
-        public override byte[] ReadData()
+        public override byte[] ReadData(int bufferSize)
         {
-            throw new System.NotImplementedException();
+            byte[] buffer = new byte[bufferSize];
+
+            try
+            {
+                _socket.Receive(buffer);
+            }
+            catch (SocketException)
+            {
+                // output to logger
+                Disconnect();
+                throw;
+            }
+
+            return buffer;
         }
 
         public override void SendData(byte[] data)
         {
-            throw new System.NotImplementedException();
+            try
+            {
+                _socket.Send(data);
+            }
+            catch (SocketException)
+            {
+                // output to logger
+                Disconnect();
+                throw;
+            }
         }
     }
 }

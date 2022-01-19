@@ -4,7 +4,7 @@ namespace Client.BL.Abstraction
 {
     public abstract class ClientBase
     {
-        public bool IsConnected { get; private set; }
+        public bool IsConnected { get; protected set; }
 
         public abstract bool Connect(IPAddress address, int port);
 

@@ -1,4 +1,4 @@
-﻿using System.Threading.Tasks;
+﻿using System.Net;
 
 namespace Client.BL.Abstraction
 {
@@ -6,13 +6,13 @@ namespace Client.BL.Abstraction
     {
         public bool IsConnected { get; private set; }
 
-        public abstract bool Connect();
+        public abstract bool Connect(IPAddress address, int port);
 
         public abstract void Disconnect();
 
         public abstract void SendData(byte[] data);
 
-        public abstract byte[] ReadData();
+        public abstract byte[] ReadData(int bufferSize);
 
     }
 }

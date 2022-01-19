@@ -11,6 +11,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{FCEB19
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Abstractions", "Common.Abstractions\Common.Abstractions.csproj", "{B12C475B-B8F9-4B7C-BF95-5F2FDCD6FD1A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EchoServer.BL.Abstraction", "EchoServer.BL.Abstraction\EchoServer.BL.Abstraction.csproj", "{D224A509-11D1-478F-A3D4-5246BA2034D6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,12 +23,17 @@ Global
 		{B12C475B-B8F9-4B7C-BF95-5F2FDCD6FD1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B12C475B-B8F9-4B7C-BF95-5F2FDCD6FD1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B12C475B-B8F9-4B7C-BF95-5F2FDCD6FD1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D224A509-11D1-478F-A3D4-5246BA2034D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D224A509-11D1-478F-A3D4-5246BA2034D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D224A509-11D1-478F-A3D4-5246BA2034D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D224A509-11D1-478F-A3D4-5246BA2034D6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{B12C475B-B8F9-4B7C-BF95-5F2FDCD6FD1A} = {FCEB1954-0A53-4F18-BEF5-24F8C79C164F}
+		{D224A509-11D1-478F-A3D4-5246BA2034D6} = {FC5FCD05-BBD1-4CDE-AAB8-88E7BF2CF66D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {167E60F3-0F8B-4DDB-9086-2771DE934876}

@@ -2,18 +2,30 @@
 using System.Net;
 using System.Net.Sockets;
 using EchoServer.BL.Abstraction;
+using EchoServer.BL.Abstraction.SocketWrappers;
 
 namespace EchoServer.BL.Implementation
 {
     public class ClientHandler : IClientHandler
     {
-        private IStreamReaderAsync _clientStreamReader;
-        private IStreamWriterAsync _clientStreamWriter;
+        private ISocketStreamWrapper _socketStream;
+
+        public ClientHandler(ISocketStreamWrapper stream)
+        {
+            _socketStream = stream;
+        }
 
         public async Task HandleClient()
         {
-            var data = await _clientStreamReader.ReadAsync();
-            await _clientStreamWriter.Write(data);
+            try
+            {
+                var data = await _socketStream.ReadAsync();
+                await _socketStream.WriteAsync(data);
+            }
+            catch (SocketException)
+            {
+                await _socketStream.Close();
+            }
         }
     }
 }

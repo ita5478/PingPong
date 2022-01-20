@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+using System.Threading;
 
 namespace EchoServer.BL.Abstraction
 {
@@ -6,6 +7,6 @@ namespace EchoServer.BL.Abstraction
     {
         void Bind(int port);
 
-        Task ListenForClients();
+        Task ListenForClients(CancellationToken token);
     }
 }

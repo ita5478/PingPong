@@ -2,8 +2,10 @@
 
 namespace Client.BL.Abstraction
 {
-	public interface IConverter<in Tinput, out Toutput>
+	public interface IConverter<Tinput, Toutput>
 	{
-		Toutput Convert(Tinput input);
+		Toutput ConvertTo(Tinput input);
+
+		Tinput ConvertFrom(Toutput input);
 	}
 }

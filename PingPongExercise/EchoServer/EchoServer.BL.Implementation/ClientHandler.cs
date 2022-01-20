@@ -4,6 +4,7 @@ using System.Net.Sockets;
 using EchoServer.BL.Abstraction;
 using EchoServer.BL.Abstraction.SocketWrappers;
 using EchoServer.BL.Abstraction.IO;
+using System.Threading;
 
 namespace EchoServer.BL.Implementation
 {
@@ -17,19 +18,23 @@ namespace EchoServer.BL.Implementation
             _writer = writer;
         }
 
-        public async Task HandleClient()
+        public async Task HandleClient(CancellationToken token)
         {
-            try
+            while (!token.IsCancellationRequested)
             {
-                var data = await _socketStream.ReadAsync(1000);
-                _writer.Write("Received bytes. Sending them back to the client.");
-                await _socketStream.WriteAsync(data);
-                _writer.Write("Succussfuly sent the data back to the client.");
-            }
-            catch (SocketException)
-            {
-                _writer.Write("Socket isn't responding. Closing connection.");
-                _socketStream.Close();
+                try
+                {
+                    _writer.Write("Waiting for the client to send a message.");
+                    var data = await _socketStream.ReadAsync(100);
+                    _writer.Write("Received bytes. Sending them back to the client.");
+                    await _socketStream.WriteAsync(data);
+                    _writer.Write("Succussfuly sent the data back to the client.");
+                }
+                catch (SocketException)
+                {
+                    _writer.Write("Socket isn't responding. Closing connection.");
+                    _socketStream.Close();
+                }
             }
         }
     }

@@ -30,12 +30,14 @@ namespace EchoServer.BL.Implementation
 
         public override void ListenForClients()
         {
+            CancellationTokenSource tokenSource = new CancellationTokenSource();
+
             while (true)
             {
                 var socketStream = new SocketStreamWrapper(_listener.Accept());
                 _writer.Write("A new connection has been made.");
                 var handler = ClientHandlerFactory.Create(socketStream);
-                Task.Run(handler.HandleClient);
+                handler.HandleClient(tokenSource.Token);
             }
         }
     }

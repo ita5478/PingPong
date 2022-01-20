@@ -2,6 +2,7 @@
 using System.Net.Sockets;
 using System.Threading.Tasks;
 using EchoServer.BL.Abstraction.SocketWrappers;
+using System.Linq;
 
 
 namespace EchoServer.BL.Implementation
@@ -27,7 +28,7 @@ namespace EchoServer.BL.Implementation
             object token = new object();
             args.UserToken = token;
             args.SetBuffer(new byte[bufferSize], 0, bufferSize);
-            
+
             int bytesReceived = 0;
             bool finished = false;
             args.Completed += (sender, args) =>
@@ -38,7 +39,7 @@ namespace EchoServer.BL.Implementation
 
             _socket.ReceiveAsync(args);
 
-            await Task.Run(async () => 
+            await Task.Run(async () =>
             {
                 while (!finished)
                 {
@@ -46,7 +47,9 @@ namespace EchoServer.BL.Implementation
                 }
             });
 
-            return args.Buffer;
+            byte[] bytes = new byte[bytesReceived];
+            System.Array.Copy(args.Buffer, bytes, bytesReceived);
+            return bytes;
         }
 
         public async Task WriteAsync(byte[] buffer)
@@ -55,10 +58,13 @@ namespace EchoServer.BL.Implementation
             args.SetBuffer(buffer);
             bool finished = false;
 
-            args.Completed += (sender, args) => finished = true;
-            _socket.SendAsync(args);
+            args.Completed += (sender, args) =>
+            {
+                finished = true;
+            };
 
-            while (!finished)
+            var pending = _socket.SendAsync(args);
+            while (pending && !finished)
             {
                 await Task.Delay(INTERVAL);
             }

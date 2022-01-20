@@ -11,24 +11,30 @@ namespace Client.BL.Implementation
         protected ClientSocketBase ClientSocket;
         protected IWriter<string> Writer;
         protected IReader<string> Reader;
-        protected IConverter<string, byte[]> Converter;
+        protected IConverter<string, byte[]> StringToByteConverter;
+        protected IConverter<string, IPAddress> StringToIPConverter;
+        protected IConnectionInitializer ConnectionInitializer;
 
         public ClientRunner(ClientSocketBase socket,
             IWriter<string> writer,
             IReader<string> reader,
-            IConverter<string, byte[]> converter)
+            IConverter<string, byte[]> stringToByteConverter,
+            IConverter<string, IPAddress> stringToIPConverter,
+            IConnectionInitializer connectionInitializer)
         {
             ClientSocket = socket;
             Writer = writer;
             Reader = reader;
-            Converter = converter;
+            StringToByteConverter = stringToByteConverter;
+            StringToIPConverter = stringToIPConverter;
+            ConnectionInitializer = connectionInitializer;
         }
 
         public void Start(string ip, int port)
         {
             try
             {
-                if (!Connect(ip, port))
+                if (!ConnectionInitializer.Connect(StringToIPConverter.ConvertTo(ip), port))
                 {
                     return;
                 }
@@ -37,50 +43,16 @@ namespace Client.BL.Implementation
                 {
                     string input = Reader.Read();
 
-                    ClientSocket.SendData(Converter.ConvertTo(input));
+                    ClientSocket.SendData(StringToByteConverter.ConvertTo(input));
                     Writer.Write($"Sent {input} to the server.");
                     var data = ClientSocket.ReadData(input.Length);
 
-                    Writer.Write(Converter.ConvertFrom(data));
+                    Writer.Write(StringToByteConverter.ConvertFrom(data));
                 }
             }
             catch (SocketException)
             {
                 Writer.Write("There's been an error with the connection to the server.");
-            }
-        }
-
-        private bool Connect(string ip, int port)
-        {
-            try
-            {
-                IPAddress address = IPAddress.Parse(ip);
-                var connectionStatus = ClientSocket.Connect(address, port);
-                if (connectionStatus)
-                {
-                    Writer.Write($"Connected Succussfully to {ip}:{port}");
-                }
-                else
-                {
-                    Writer.Write($"Connection to {ip}:{port} failed.");
-                }
-
-                return connectionStatus;
-            }
-            catch (FormatException)
-            {
-                Writer.Write("Invalid IP format entered.");
-                return false;
-            }
-            catch (ArgumentNullException)
-            {
-                Writer.Write("No IP entered.");
-                return false;
-            }
-            catch (SocketException)
-            {
-                Writer.Write($"Connection to {ip}:{port} failed.");
-                return false;
             }
         }
     }

@@ -7,8 +7,8 @@ namespace EchoServer.BL.Implementation
 {
     public class ClientHandler : IClientHandler
     {
-        private IStreamReaderAsync<object> _clientStreamReader;
-        private IStreamWriterAsync<object> _clientStreamWriter;
+        private IStreamReaderAsync _clientStreamReader;
+        private IStreamWriterAsync _clientStreamWriter;
 
         public async Task HandleClient()
         {

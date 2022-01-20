@@ -8,7 +8,7 @@ namespace Client.BL.Implementation
     {
         private Socket _socket;
         
-        public ClientSocket()
+        public ClientSocket()   
         {
             _socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             IsConnected = false;

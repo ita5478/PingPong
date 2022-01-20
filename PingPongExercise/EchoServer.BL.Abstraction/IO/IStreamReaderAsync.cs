@@ -2,8 +2,8 @@
 
 namespace EchoServer.BL.Abstraction
 {
-    public interface IStreamReaderAsync <T>
+    public interface IStreamReaderAsync
     {
-        Task<T> ReadAsync();
+        Task<byte[]> ReadAsync();
     }
 }

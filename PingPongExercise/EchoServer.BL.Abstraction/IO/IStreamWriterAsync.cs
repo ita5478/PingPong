@@ -2,8 +2,8 @@
 
 namespace EchoServer.BL.Abstraction
 {
-    public interface IStreamWriterAsync <in T>
+    public interface IStreamWriterAsync 
     {
-        Task Write(T data);
+        Task Write(byte[] data);
     }
 }

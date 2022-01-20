@@ -8,9 +8,10 @@ namespace EchoServer.Startup
     {
         public ClientListenerBase Initialize()
         {
-            var factory = new ClientHandlerFactory();
+            var writer = new ConsoleWriter();
+            var factory = new ClientHandlerFactory(writer);
 
-            return new SocketClientListener(factory);
+            return new SocketClientListener(factory, writer);
         }
     }
 }

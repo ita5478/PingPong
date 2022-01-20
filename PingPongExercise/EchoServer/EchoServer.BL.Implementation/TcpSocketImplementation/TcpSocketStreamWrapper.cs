@@ -23,8 +23,10 @@ namespace EchoServer.BL.Implementation
         public async Task<byte[]> ReadAsync(int bufferSize)
         {
             byte[] bytes = new byte[bufferSize];
-            await _socketStream.ReadAsync(bytes, 0, bufferSize);
-            return bytes;
+            int amountReceived = await _socketStream.ReadAsync(bytes, 0, bufferSize);
+            var ret = new byte[amountReceived];
+            System.Array.Copy(bytes, ret, amountReceived);
+            return ret;
         }
 
         public async Task WriteAsync(byte[] buffer)

@@ -19,6 +19,8 @@ namespace EchoServer.BL.Implementation
         public override void Bind(int port)
         {
             _listener = new TcpListener(IPAddress.Parse("0.0.0.0"), port);
+            
+            _writer.Write($"Listening on port {port}.");
         }
 
         public override void ListenForClients()
@@ -29,6 +31,7 @@ namespace EchoServer.BL.Implementation
             while (true)
             {
                 var clientStream = new TcpSocketStreamWrapper(_listener.AcceptTcpClient().GetStream());
+                _writer.Write("A new connection has been made.");
                 var handler = ClientHandlerFactory.Create(clientStream);
                 handler.HandleClient(source.Token);
             }

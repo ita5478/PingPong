@@ -8,11 +8,16 @@ namespace Client.ConsoleUI
         {
             var writer = new IO.ConsoleWriter();
             var reader = new IO.ConsoleReader();
-            var converter = new StringToByteArrayConverter();
+
+            var stringToByteConverter = new StringToByteArrayConverter();
+            var stringToIPConverter = new StringToIPConverter();
 
             var socket = new TcpClientSocket();
 
-            ClientRunner runner = new ClientRunner(socket, writer, reader, converter);
+            var connectionInitializer = new ServerConnectionInitializer(writer, socket);
+            var clientAction = new SendMessageToEchoServerAction(socket, writer, reader, stringToByteConverter);
+            
+            ClientRunner runner = new ClientRunner(connectionInitializer, clientAction, stringToIPConverter);
             return runner;
         }
     }

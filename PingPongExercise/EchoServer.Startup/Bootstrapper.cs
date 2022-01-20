@@ -11,7 +11,7 @@ namespace EchoServer.Startup
             var writer = new ConsoleWriter();
             var factory = new ClientHandlerFactory(writer);
 
-            return new SocketClientListener(factory, writer);
+            return new TcpSocketClientListener(factory, writer);
         }
     }
 }

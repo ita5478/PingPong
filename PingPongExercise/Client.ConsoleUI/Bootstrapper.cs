@@ -10,7 +10,7 @@ namespace Client.ConsoleUI
             var reader = new IO.ConsoleReader();
             var converter = new StringToByteArrayConverter();
 
-            var socket = new ClientSocket();
+            var socket = new TcpClientSocket();
 
             ClientRunner runner = new ClientRunner(socket, writer, reader, converter);
             return runner;

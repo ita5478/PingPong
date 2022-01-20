@@ -13,20 +13,20 @@ namespace Client.BL.Implementation
         protected IReader<string> Reader;
         protected IConverter<string, byte[]> Converter;
 
-        public ClientRunner (ClientSocketBase socket, 
-            IWriter<string> writer, 
+        public ClientRunner(ClientSocketBase socket,
+            IWriter<string> writer,
             IReader<string> reader)
-	    {
+        {
             ClientSocket = socket;
             Writer = writer;
             Reader = reader;
-	    }
+        }
 
         public void Start(string ip, int port)
         {
             try
             {
-                if(!Connect(ip, port))
+                if (!Connect(ip, port))
                 {
                     return;
                 }
@@ -52,9 +52,18 @@ namespace Client.BL.Implementation
             try
             {
                 IPAddress address = IPAddress.Parse(ip);
-                ClientSocket.Connect(address, port);
-                Writer.Write($"Connected Succussfully to {ip}:{port}");
-                return true;
+                var connectionStatus = ClientSocket.Connect(address, port);
+                if (connectionStatus)
+                {
+                    Writer.Write($"Connected Succussfully to {ip}:{port}");
+                }
+                else
+                {
+                    Writer.Write($"Connection to {ip}:{port} failed.");
+
+                }
+
+                return connectionStatus;
             }
             catch (FormatException)
             {

@@ -1,14 +1,14 @@
-﻿using System.Net;
+﻿using Client.BL.Abstraction;
+using System.Net;
 using System.Net.Sockets;
-using Client.BL.Abstraction;
 
 namespace Client.BL.Implementation
 {
     public class ClientSocket : ClientSocketBase
     {
         private Socket _socket;
-        
-        public ClientSocket()   
+
+        public ClientSocket()
         {
             _socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             IsConnected = false;
@@ -20,7 +20,7 @@ namespace Client.BL.Implementation
             {
                 _socket.Connect(address, port);
             }
-            catch(SocketException)
+            catch (SocketException)
             {
                 return false;
             }

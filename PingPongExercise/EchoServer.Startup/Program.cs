@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace EchoServer.Startup
+﻿namespace EchoServer.Startup
 {
     class Program
     {

@@ -7,7 +7,6 @@ namespace Client.BL.Implementation
     public class TcpClientSocket : ClientSocketBase
     {
         private TcpClient _clientSocket;
-
         public TcpClientSocket()
         {
             _clientSocket = new TcpClient();
@@ -18,6 +17,7 @@ namespace Client.BL.Implementation
             try
             {
                 _clientSocket.Connect(new IPEndPoint(address, port));
+                IsConnected = true;
                 return true;
             }
             catch (SocketException)
@@ -28,6 +28,7 @@ namespace Client.BL.Implementation
 
         public override void Disconnect()
         {
+            IsConnected = false;
             _clientSocket.Close();
         }
 

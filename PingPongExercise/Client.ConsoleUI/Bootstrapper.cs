@@ -1,4 +1,5 @@
 ﻿using Client.BL.Implementation;
+using Common.Implementations.Converters;
 
 namespace Client.ConsoleUI
 {

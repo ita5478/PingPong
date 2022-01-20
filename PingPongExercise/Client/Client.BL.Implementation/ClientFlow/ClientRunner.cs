@@ -1,4 +1,5 @@
 ﻿using Client.BL.Abstraction;
+using Common.Abstractions.IO;
 using System.Net;
 
 namespace Client.BL.Implementation

@@ -1,5 +1,5 @@
-﻿using EchoServer.BL.Abstraction;
-using EchoServer.BL.Abstraction.IO;
+﻿using Common.Abstractions.IO;
+using EchoServer.BL.Abstraction;
 using System.Net;
 using System.Net.Sockets;
 

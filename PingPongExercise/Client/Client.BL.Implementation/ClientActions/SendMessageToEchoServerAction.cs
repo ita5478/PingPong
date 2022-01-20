@@ -1,5 +1,5 @@
 ﻿using Client.BL.Abstraction;
-using Client.BL.Abstraction.IO;
+using Common.Abstractions.IO;
 using System.Net.Sockets;
 
 namespace Client.BL.Implementation

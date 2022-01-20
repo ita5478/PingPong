@@ -1,4 +1,4 @@
-﻿using EchoServer.BL.Abstraction.IO;
+﻿using Common.Abstractions.IO;
 using System;
 
 namespace EchoServer.BL.Implementation

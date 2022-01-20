@@ -2,8 +2,8 @@
 using System.Net.Sockets;
 using System.Threading;
 using System.Threading.Tasks;
+using Common.Abstractions.IO;
 using EchoServer.BL.Abstraction;
-using EchoServer.BL.Abstraction.IO;
 
 namespace EchoServer.BL.Implementation
 {

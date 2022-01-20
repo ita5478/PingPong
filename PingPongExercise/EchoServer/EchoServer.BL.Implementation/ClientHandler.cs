@@ -3,8 +3,8 @@ using System.Net;
 using System.Net.Sockets;
 using EchoServer.BL.Abstraction;
 using EchoServer.BL.Abstraction.SocketWrappers;
-using EchoServer.BL.Abstraction.IO;
 using System.Threading;
+using Common.Abstractions.IO;
 
 namespace EchoServer.BL.Implementation
 {

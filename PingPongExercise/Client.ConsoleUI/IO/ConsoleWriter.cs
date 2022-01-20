@@ -1,4 +1,4 @@
-﻿using Client.BL.Abstraction.IO;
+﻿using Common.Abstractions.IO;
 using System;
 
 namespace Client.ConsoleUI.IO

@@ -2,6 +2,7 @@
   "profiles": {
     "Client.ConsoleUI": {
       "commandName": "Project",
+      "commandLineArgs": "127.0.0.1:6666",
       "remoteDebugEnabled": false
     }
   }

@@ -9,7 +9,9 @@
             Bootstrapper boot = new Bootstrapper();
             var runner = boot.Initialize();
 
-            runner.Start(IP, PORT);
+            string[] parts = args[0].Split(':');
+
+            runner.Start(parts[0], int.Parse(parts[1]));
         }
     }
 }

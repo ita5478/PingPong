@@ -4,7 +4,7 @@ using Client.BL.Abstraction;
 
 namespace Client.BL.Implementation
 {
-    class ClientSocket : ClientSocketBase
+    public class ClientSocket : ClientSocketBase
     {
         private Socket _socket;
         

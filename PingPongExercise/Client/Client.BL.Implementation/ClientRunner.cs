@@ -15,11 +15,13 @@ namespace Client.BL.Implementation
 
         public ClientRunner(ClientSocketBase socket,
             IWriter<string> writer,
-            IReader<string> reader)
+            IReader<string> reader,
+            IConverter<string, byte[]> converter)
         {
             ClientSocket = socket;
             Writer = writer;
             Reader = reader;
+            Converter = converter;
         }
 
         public void Start(string ip, int port)
@@ -36,6 +38,7 @@ namespace Client.BL.Implementation
                     string input = Reader.Read();
 
                     ClientSocket.SendData(Converter.ConvertTo(input));
+                    Writer.Write($"Sent {input} to the server.");
                     var data = ClientSocket.ReadData(input.Length);
 
                     Writer.Write(Converter.ConvertFrom(data));

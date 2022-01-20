@@ -1,7 +1,6 @@
 ﻿using System.Net;
 using System.Net.Sockets;
 using System.Threading.Tasks;
-using System.Collections.Generic;
 using EchoServer.BL.Abstraction.SocketWrappers;
 
 
@@ -25,11 +24,27 @@ namespace EchoServer.BL.Implementation
         public async Task<byte[]> ReadAsync(int bufferSize)
         {
             SocketAsyncEventArgs args = new SocketAsyncEventArgs();
+            object token = new object();
+            args.UserToken = token;
             args.SetBuffer(new byte[bufferSize], 0, bufferSize);
-            while (_socket.ReceiveAsync(args))
+            
+            int bytesReceived = 0;
+            bool finished = false;
+            args.Completed += (sender, args) =>
             {
-                await Task.Delay(INTERVAL);
-            }
+                bytesReceived += args.BytesTransferred;
+                finished = true;
+            };
+
+            _socket.ReceiveAsync(args);
+
+            await Task.Run(async () => 
+            {
+                while (!finished)
+                {
+                    await Task.Delay(INTERVAL);
+                }
+            });
 
             return args.Buffer;
         }
@@ -38,8 +53,12 @@ namespace EchoServer.BL.Implementation
         {
             SocketAsyncEventArgs args = new SocketAsyncEventArgs();
             args.SetBuffer(buffer);
+            bool finished = false;
 
-            while (_socket.SendAsync(args))
+            args.Completed += (sender, args) => finished = true;
+            _socket.SendAsync(args);
+
+            while (!finished)
             {
                 await Task.Delay(INTERVAL);
             }

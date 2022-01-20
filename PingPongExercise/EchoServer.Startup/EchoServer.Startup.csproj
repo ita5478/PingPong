@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EchoServer\EchoServer.BL.Abstraction\EchoServer.BL.Abstraction.csproj" />
+    <ProjectReference Include="..\EchoServer\EchoServer.BL.Implementation\EchoServer.BL.Implementation.csproj" />
+  </ItemGroup>
+
+</Project>

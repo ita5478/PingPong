@@ -7,6 +7,6 @@ namespace EchoServer.BL.Abstraction
     {
         void Bind(int port);
 
-        Task ListenForClients(CancellationToken token);
+        void ListenForClients();
     }
 }

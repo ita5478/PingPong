@@ -4,10 +4,10 @@ namespace EchoServer.BL.Abstraction.SocketWrappers
 {
     public interface ISocketStreamWrapper
     {
-        Task<byte[]> ReadAsync();
+        Task<byte[]> ReadAsync(int bufferSize);
 
         Task WriteAsync(byte[] buffer);
 
-        Task Close();
+        void Close();
     }
 }

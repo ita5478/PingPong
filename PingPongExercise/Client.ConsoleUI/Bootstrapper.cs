@@ -16,7 +16,7 @@ namespace Client.ConsoleUI
 
             var connectionInitializer = new ServerConnectionInitializer(writer, socket);
             var clientAction = new SendMessageToEchoServerAction(socket, writer, reader, stringToByteConverter);
-            
+
             ClientRunner runner = new ClientRunner(connectionInitializer, clientAction, stringToIPConverter);
             return runner;
         }

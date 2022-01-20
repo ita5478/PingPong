@@ -1,5 +1,5 @@
-﻿using System;
-using Client.BL.Abstraction.IO;
+﻿using Client.BL.Abstraction.IO;
+using System;
 
 namespace Client.ConsoleUI.IO
 {

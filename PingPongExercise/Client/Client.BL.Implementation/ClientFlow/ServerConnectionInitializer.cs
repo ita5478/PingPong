@@ -1,8 +1,8 @@
-﻿using System;
+﻿using Client.BL.Abstraction;
+using Client.BL.Abstraction.IO;
+using System;
 using System.Net;
 using System.Net.Sockets;
-using Client.BL.Abstraction.IO;
-using Client.BL.Abstraction;
 
 namespace Client.BL.Implementation
 {

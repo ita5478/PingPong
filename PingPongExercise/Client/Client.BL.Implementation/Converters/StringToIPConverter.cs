@@ -1,5 +1,5 @@
-﻿using System.Net;
-using Client.BL.Abstraction;
+﻿using Client.BL.Abstraction;
+using System.Net;
 
 namespace Client.BL.Implementation
 {

@@ -12,9 +12,9 @@ namespace Client.BL.Implementation
         public IConverter<string, byte[]> _stringToByteConverter;
 
         public SendMessageToEchoServerAction(
-            ClientSocketBase clientSocket, 
-            IWriter<string> userOutputWriter, 
-            IReader<string> userInputReader, 
+            ClientSocketBase clientSocket,
+            IWriter<string> userOutputWriter,
+            IReader<string> userInputReader,
             IConverter<string, byte[]> stringToByteConverter)
         {
             _clientSocket = clientSocket;
@@ -34,7 +34,7 @@ namespace Client.BL.Implementation
 
                     _clientSocket.SendData(_stringToByteConverter.ConvertTo(input));
                     _userOutputWriter.Write($"Sent {input} to the server.");
-                
+
                     var data = _clientSocket.ReadData(input.Length);
                     var receivedData = _stringToByteConverter.ConvertFrom(data);
                     _userOutputWriter.Write($"The server returned {receivedData}.");

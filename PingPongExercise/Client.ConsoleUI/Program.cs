@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Client.ConsoleUI
+﻿namespace Client.ConsoleUI
 {
     class Program
     {

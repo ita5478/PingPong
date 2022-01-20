@@ -63,7 +63,6 @@ namespace Client.BL.Implementation
                 else
                 {
                     Writer.Write($"Connection to {ip}:{port} failed.");
-
                 }
 
                 return connectionStatus;

@@ -19,12 +19,12 @@ namespace EchoServer.BL.Implementation
         {
             try
             {
-                var data = await _socketStream.ReadAsync();
+                var data = await _socketStream.ReadAsync(1000);
                 await _socketStream.WriteAsync(data);
             }
             catch (SocketException)
             {
-                await _socketStream.Close();
+                _socketStream.Close();
             }
         }
     }

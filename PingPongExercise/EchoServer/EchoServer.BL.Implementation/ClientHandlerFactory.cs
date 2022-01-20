@@ -1,6 +1,6 @@
-﻿using EchoServer.BL.Abstraction;
+﻿using Common.Abstractions.IO;
+using EchoServer.BL.Abstraction;
 using EchoServer.BL.Abstraction.SocketWrappers;
-using Common.Abstractions.IO;
 
 namespace EchoServer.BL.Implementation
 {

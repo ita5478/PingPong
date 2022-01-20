@@ -10,7 +10,7 @@ namespace EchoServer.BL.Implementation
         private IWriter<string> _writer;
         private TcpListener _listener;
 
-        public TcpSocketClientListener(IClientHandlerFactory factory, IWriter<string> writer) 
+        public TcpSocketClientListener(IClientHandlerFactory factory, IWriter<string> writer)
             : base(factory)
         {
             _writer = writer;
@@ -19,7 +19,7 @@ namespace EchoServer.BL.Implementation
         public override void Bind(int port)
         {
             _listener = new TcpListener(IPAddress.Parse("0.0.0.0"), port);
-            
+
             _writer.Write($"Listening on port {port}.");
         }
 

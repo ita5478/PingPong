@@ -1,9 +1,8 @@
-﻿using System.Net;
+﻿using Common.Abstractions.IO;
+using EchoServer.BL.Abstraction;
+using System.Net;
 using System.Net.Sockets;
 using System.Threading;
-using System.Threading.Tasks;
-using Common.Abstractions.IO;
-using EchoServer.BL.Abstraction;
 
 namespace EchoServer.BL.Implementation
 {
@@ -13,7 +12,7 @@ namespace EchoServer.BL.Implementation
         private Socket _listener;
         private IWriter<string> _writer;
 
-        public SocketClientListener(IClientHandlerFactory factory, IWriter<string> writer) 
+        public SocketClientListener(IClientHandlerFactory factory, IWriter<string> writer)
             : base(factory)
         {
             _listener = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);

@@ -1,10 +1,9 @@
-﻿using System.Threading.Tasks;
-using System.Net;
-using System.Net.Sockets;
+﻿using Common.Abstractions.IO;
 using EchoServer.BL.Abstraction;
 using EchoServer.BL.Abstraction.SocketWrappers;
+using System.Net.Sockets;
 using System.Threading;
-using Common.Abstractions.IO;
+using System.Threading.Tasks;
 
 namespace EchoServer.BL.Implementation
 {

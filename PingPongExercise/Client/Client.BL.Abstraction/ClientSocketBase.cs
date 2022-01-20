@@ -2,7 +2,7 @@
 
 namespace Client.BL.Abstraction
 {
-    public abstract class ClientBase
+    public abstract class ClientSocketBase
     {
         public bool IsConnected { get; protected set; }
 

@@ -4,11 +4,11 @@ using Client.BL.Abstraction;
 
 namespace Client.BL.Implementation
 {
-    class Client : ClientBase
+    public class ClientSocket : ClientSocketBase
     {
         private Socket _socket;
         
-        public Client()
+        public ClientSocket()   
         {
             _socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             IsConnected = false;

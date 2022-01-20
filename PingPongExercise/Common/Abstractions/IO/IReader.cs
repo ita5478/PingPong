@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Client.BL.Abstraction.IO
+namespace Common.Abstractions.IO
 {
     public interface IReader<out T>
     {

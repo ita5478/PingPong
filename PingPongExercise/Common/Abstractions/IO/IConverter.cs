@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Client.BL.Abstraction
+namespace Common.Abstractions.IO
 {
 	public interface IConverter<Tinput, Toutput>
 	{

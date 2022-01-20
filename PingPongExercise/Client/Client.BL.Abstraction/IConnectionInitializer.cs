@@ -4,6 +4,6 @@ namespace Client.BL.Abstraction
 {
     public interface IConnectionInitializer
     {
-        bool Connect(EndPoint ep);
+        bool Connect(IPAddress address, int port);
     }
 }

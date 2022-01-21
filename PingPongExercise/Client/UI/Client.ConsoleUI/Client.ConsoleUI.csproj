@@ -8,7 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Client\Client.BL.Implementation\Client.BL.Implementation.csproj" />
+    <ProjectReference Include="..\..\..\Common\Common.csproj" />
+    <ProjectReference Include="..\..\BL\Client.BL.Implementation\Client.BL.Implementation.csproj" />
   </ItemGroup>
 
 </Project>

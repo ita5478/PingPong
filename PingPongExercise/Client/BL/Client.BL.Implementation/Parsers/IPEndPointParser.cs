@@ -1,6 +1,6 @@
-﻿using System.Net;
-using Common.Abstractions.IO;
+﻿using Common.Abstractions.IO;
 using Common.Implementations.Parsers;
+using System.Net;
 
 namespace Client.BL.Implementation.Parsers
 {

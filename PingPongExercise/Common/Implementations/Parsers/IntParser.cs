@@ -1,5 +1,4 @@
-﻿using System;
-using Common.Abstractions.IO;
+﻿using Common.Abstractions.IO;
 
 namespace Common.Implementations.Parsers
 {

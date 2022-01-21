@@ -5,8 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Client.BL.Core\Client.BL.Core.csproj" />
-    <ProjectReference Include="..\..\Common\Common.csproj" />
+    <ProjectReference Include="..\..\..\Common\Common.csproj" />
+    <ProjectReference Include="..\..\Core\Client.BL.Core\Client.BL.Core.csproj" />
   </ItemGroup>
 
 </Project>

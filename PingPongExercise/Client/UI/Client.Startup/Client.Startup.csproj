@@ -6,9 +6,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Client.BL.Core\Client.BL.Core.csproj" />
+    <ProjectReference Include="..\..\BL\Client.BL.Implementation\Client.BL.Implementation.csproj" />
+    <ProjectReference Include="..\..\Core\Client.BL.Core\Client.BL.Core.csproj" />
     <ProjectReference Include="..\Client.ConsoleUI\Client.ConsoleUI.csproj" />
-    <ProjectReference Include="..\Client\Client.BL.Implementation\Client.BL.Implementation.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,15 +1,16 @@
 ﻿using Client.BL.Core.Implementation;
 using Client.BL.Implementation;
+using Client.ConsoleUI.IO;
 using Common.Implementations.Converters;
 
-namespace Client.ConsoleUI
+namespace Client.Startup
 {
     public class Bootstrapper
     {
         public ClientRunner Initialize()
         {
-            var writer = new IO.ConsoleWriter();
-            var reader = new IO.ConsoleReader();
+            var writer = new ConsoleWriter();
+            var reader = new ConsoleReader();
 
             var stringToByteConverter = new StringToByteArrayConverter();
             var stringToIPConverter = new StringToIPConverter();

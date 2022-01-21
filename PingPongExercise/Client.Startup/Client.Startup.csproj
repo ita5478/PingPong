@@ -1,8 +1,14 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Client.BL.Core\Client.BL.Core.csproj" />
+    <ProjectReference Include="..\Client.ConsoleUI\Client.ConsoleUI.csproj" />
+    <ProjectReference Include="..\Client\Client.BL.Implementation\Client.BL.Implementation.csproj" />
+  </ItemGroup>
 
 </Project>

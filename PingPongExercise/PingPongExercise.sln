@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.0.32112.339
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32106.194
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{DD8DA6A4-D7B4-4129-A226-DD9304A6C16C}"
 EndProject
@@ -21,7 +21,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EchoServer.Startup", "EchoS
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{3115C915-3153-4FCE-BC9F-52A5B4D3F0B6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{FCCB9D2E-4E42-47C0-A1F1-3890190471D9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common", "Common\Common.csproj", "{FCCB9D2E-4E42-47C0-A1F1-3890190471D9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{719CF2F8-2D3B-4A7A-8954-FAC9DB778B34}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client.BL.Core", "Client.BL.Core\Client.BL.Core.csproj", "{F420E687-BEAE-4652-8B43-EDA6DFFBB19B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +61,10 @@ Global
 		{FCCB9D2E-4E42-47C0-A1F1-3890190471D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FCCB9D2E-4E42-47C0-A1F1-3890190471D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FCCB9D2E-4E42-47C0-A1F1-3890190471D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F420E687-BEAE-4652-8B43-EDA6DFFBB19B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F420E687-BEAE-4652-8B43-EDA6DFFBB19B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F420E687-BEAE-4652-8B43-EDA6DFFBB19B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F420E687-BEAE-4652-8B43-EDA6DFFBB19B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -69,6 +77,8 @@ Global
 		{4AA25A81-79AA-4868-BB95-67C4F1F487A1} = {DD8DA6A4-D7B4-4129-A226-DD9304A6C16C}
 		{D913DB2C-C605-4F27-988A-A29F7CF8A5E0} = {743EF59D-7A65-468A-8B63-9B73B27918ED}
 		{FCCB9D2E-4E42-47C0-A1F1-3890190471D9} = {3115C915-3153-4FCE-BC9F-52A5B4D3F0B6}
+		{719CF2F8-2D3B-4A7A-8954-FAC9DB778B34} = {DD8DA6A4-D7B4-4129-A226-DD9304A6C16C}
+		{F420E687-BEAE-4652-8B43-EDA6DFFBB19B} = {719CF2F8-2D3B-4A7A-8954-FAC9DB778B34}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {167E60F3-0F8B-4DDB-9086-2771DE934876}

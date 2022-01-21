@@ -1,5 +1,5 @@
 ﻿
-namespace Client.BL.Core.Abstraction
+namespace Client.BL.Core.Policy.Abstraction
 {
     public interface IClientAction
     {

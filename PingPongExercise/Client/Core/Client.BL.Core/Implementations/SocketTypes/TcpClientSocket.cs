@@ -1,8 +1,8 @@
-﻿using Client.BL.Core.Abstraction;
+﻿using Client.BL.Core.Policy.Abstraction;
 using System.Net;
 using System.Net.Sockets;
 
-namespace Client.BL.Implementation
+namespace Client.BL.Core.Implementation
 {
     public class TcpClientSocket : ClientSocketBase
     {

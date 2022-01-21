@@ -1,10 +1,10 @@
-﻿using Client.BL.Abstraction;
+﻿using Client.BL.Core.Abstraction;
 using Common.Abstractions.IO;
 using System;
 using System.Net;
 using System.Net.Sockets;
 
-namespace Client.BL.Implementation
+namespace Client.BL.Core.Implementation
 {
     public class ServerConnectionInitializer : IConnectionInitializer
     {

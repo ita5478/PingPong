@@ -1,8 +1,8 @@
-﻿using Client.BL.Abstraction;
+﻿using Client.BL.Core.Abstraction;
 using Common.Abstractions.IO;
 using System.Net;
 
-namespace Client.BL.Implementation
+namespace Client.BL.Core.Implementation
 {
     public class ClientRunner
     {

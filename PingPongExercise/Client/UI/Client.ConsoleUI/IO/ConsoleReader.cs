@@ -1,7 +1,7 @@
 ﻿using Common.Abstractions.IO;
 using System;
 
-namespace Client.ConsoleUI.IO
+namespace EchoClient.ConsoleUI.IO
 {
     public class ConsoleReader : IReader<string>
     {

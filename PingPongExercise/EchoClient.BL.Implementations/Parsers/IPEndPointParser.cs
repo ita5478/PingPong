@@ -2,7 +2,7 @@
 using Common.Implementations.Parsers;
 using System.Net;
 
-namespace Client.BL.Implementation.Parsers
+namespace EchoClient.BL.Implementation.Parsers
 {
     public class IPEndPointParser : IParser<IPEndPoint>
     {

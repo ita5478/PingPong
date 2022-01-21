@@ -1,8 +1,8 @@
-﻿using Client.BL.Core.Abstraction;
+﻿using Client.BL.Core.Policy.Abstraction;
 using Common.Abstractions.IO;
 using System.Net.Sockets;
 
-namespace Client.BL.Implementation
+namespace EchoClient.BL.Implementation.ClientActions
 {
     public class SendMessageToEchoServerAction : IClientAction
     {

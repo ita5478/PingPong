@@ -1,9 +1,10 @@
 ﻿using Client.BL.Core.Implementation;
-using Client.BL.Implementation;
-using Client.ConsoleUI.IO;
+using Client.BL.Core.Policy;
 using Common.Implementations.Converters;
+using EchoClient.BL.Implementation.ClientActions;
+using EchoClient.ConsoleUI.IO;
 
-namespace Client.Startup
+namespace EchoClient.Startup
 {
     public class Bootstrapper
     {

@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -6,9 +6,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\BL\Client.BL.Implementation\Client.BL.Implementation.csproj" />
     <ProjectReference Include="..\..\Core\Client.BL.Core\Client.BL.Core.csproj" />
-    <ProjectReference Include="..\Client.ConsoleUI\Client.ConsoleUI.csproj" />
+    <ProjectReference Include="..\Client.ConsoleUI\EchoClient.ConsoleUI.csproj" />
   </ItemGroup>
 
 </Project>

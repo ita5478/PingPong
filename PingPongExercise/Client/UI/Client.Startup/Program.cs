@@ -1,4 +1,4 @@
-﻿namespace Client.Startup
+﻿namespace EchoClient.Startup
 {
     class Program
     {

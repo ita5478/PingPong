@@ -1,4 +1,4 @@
-﻿using Client.BL.Abstraction;
+﻿using Client.BL.Core.Abstraction;
 using Common.Abstractions.IO;
 using System.Net.Sockets;
 

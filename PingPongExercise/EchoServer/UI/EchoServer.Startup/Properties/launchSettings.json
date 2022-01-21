@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "EchoServer.Startup": {
+      "commandName": "Project",
+      "commandLineArgs": "6666"
+    }
+  }
+}

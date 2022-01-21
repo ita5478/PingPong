@@ -2,13 +2,13 @@
 {
     class Program
     {
-        const int PORT = 6666;
         static void Main(string[] args)
         {
+            int port = int.Parse(args[0]);
+            
             Bootstrapper boot = new Bootstrapper();
             var listener = boot.Initialize();
-
-            listener.Bind(PORT);
+            listener.Bind(port);
             listener.ListenForClients();
         }
     }

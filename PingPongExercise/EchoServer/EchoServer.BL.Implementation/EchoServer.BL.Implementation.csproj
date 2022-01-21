@@ -6,7 +6,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Common\Common.csproj" />
-    <ProjectReference Include="..\EchoServer.BL.Abstraction\EchoServer.BL.Abstraction.csproj" />
   </ItemGroup>
 
 

@@ -6,7 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\EchoServer\EchoServer.BL.Abstraction\EchoServer.BL.Abstraction.csproj" />
     <ProjectReference Include="..\EchoServer\EchoServer.BL.Implementation\EchoServer.BL.Implementation.csproj" />
   </ItemGroup>
 

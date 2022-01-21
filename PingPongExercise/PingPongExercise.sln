@@ -5,8 +5,6 @@ VisualStudioVersion = 16.0.32106.194
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{DD8DA6A4-D7B4-4129-A226-DD9304A6C16C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Client.BL.Abstraction", "Client\Client.BL.Abstraction\Client.BL.Abstraction.csproj", "{C14D7E5E-1386-4321-BA2D-422C0E49F76C}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Client.BL.Implementation", "Client\Client.BL.Implementation\Client.BL.Implementation.csproj", "{95E59450-58CD-48B5-9625-B1CD1480317A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EchoServer", "EchoServer", "{743EF59D-7A65-468A-8B63-9B73B27918ED}"
@@ -33,10 +31,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C14D7E5E-1386-4321-BA2D-422C0E49F76C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C14D7E5E-1386-4321-BA2D-422C0E49F76C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C14D7E5E-1386-4321-BA2D-422C0E49F76C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C14D7E5E-1386-4321-BA2D-422C0E49F76C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{95E59450-58CD-48B5-9625-B1CD1480317A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{95E59450-58CD-48B5-9625-B1CD1480317A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{95E59450-58CD-48B5-9625-B1CD1480317A}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -70,7 +64,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{C14D7E5E-1386-4321-BA2D-422C0E49F76C} = {DD8DA6A4-D7B4-4129-A226-DD9304A6C16C}
 		{95E59450-58CD-48B5-9625-B1CD1480317A} = {DD8DA6A4-D7B4-4129-A226-DD9304A6C16C}
 		{3BB32399-AF68-4E55-8A24-3598FC288F62} = {743EF59D-7A65-468A-8B63-9B73B27918ED}
 		{275376F2-2187-4FCD-81E9-F3B62E4BC50E} = {743EF59D-7A65-468A-8B63-9B73B27918ED}

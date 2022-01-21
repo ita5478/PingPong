@@ -1,6 +1,6 @@
 ﻿using System.Net;
 
-namespace Client.BL.Abstraction
+namespace Client.BL.Core.Abstraction
 {
     public abstract class ClientSocketBase
     {

@@ -6,7 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Client\Client.BL.Abstraction\Client.BL.Abstraction.csproj" />
     <ProjectReference Include="..\Client\Client.BL.Implementation\Client.BL.Implementation.csproj" />
   </ItemGroup>
 

@@ -6,7 +6,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\EchoServer\EchoServer.BL.Implementation\EchoServer.BL.Implementation.csproj" />
+    <ProjectReference Include="..\..\..\Server\Core\Server.Core.BL.Abstractions\Server.Core.BL.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\Server\Core\Server.Core.BL\Server.Core.BL.csproj" />
+    <ProjectReference Include="..\..\BL\EchoServer.BL.Implementation\EchoServer.BL.Implementation.csproj" />
+    <ProjectReference Include="..\EchoServer.ConsoleUI\EchoServer.ConsoleUI.csproj" />
   </ItemGroup>
 
 </Project>

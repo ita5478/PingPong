@@ -1,10 +1,10 @@
 ﻿using Common.Abstractions.IO;
-using EchoServer.BL.Abstraction;
+using Server.Core.BL.Abstractions;
 using System.Net;
 using System.Net.Sockets;
 using System.Threading;
 
-namespace EchoServer.BL.Implementation
+namespace Server.Core.BL.SocketImplementation
 {
     public class SocketClientListener : ClientListenerBase
     {

@@ -1,7 +1,7 @@
 ﻿using Common.Abstractions.IO;
 using System;
 
-namespace EchoServer.BL.Implementation
+namespace EchoServer.UI
 {
     public class ConsoleWriter : IWriter<string>
     {

@@ -5,7 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Common\Common.csproj" />
+    <ProjectReference Include="..\..\..\Common\Common.csproj" />
+    <ProjectReference Include="..\..\..\Server\Core\Server.Core.BL.Abstractions\Server.Core.BL.Abstractions.csproj" />
   </ItemGroup>
 
 

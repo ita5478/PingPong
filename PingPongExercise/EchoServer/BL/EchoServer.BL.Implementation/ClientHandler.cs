@@ -1,6 +1,5 @@
 ﻿using Common.Abstractions.IO;
-using EchoServer.BL.Abstraction;
-using EchoServer.BL.Abstraction.SocketWrappers;
+using Server.Core.BL.Abstractions;
 using System.Net.Sockets;
 using System.Threading;
 using System.Threading.Tasks;

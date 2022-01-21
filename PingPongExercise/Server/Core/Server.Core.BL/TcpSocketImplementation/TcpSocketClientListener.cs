@@ -1,9 +1,9 @@
 ﻿using Common.Abstractions.IO;
-using EchoServer.BL.Abstraction;
+using Server.Core.BL.Abstractions;
 using System.Net;
 using System.Net.Sockets;
 
-namespace EchoServer.BL.Implementation
+namespace Server.Core.BL.TcpSocketImplementation
 {
     public class TcpSocketClientListener : ClientListenerBase
     {

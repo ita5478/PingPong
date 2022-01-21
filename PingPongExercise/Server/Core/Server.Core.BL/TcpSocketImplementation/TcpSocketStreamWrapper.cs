@@ -1,8 +1,8 @@
-﻿using EchoServer.BL.Abstraction.SocketWrappers;
+﻿using Server.Core.BL.Abstractions;
 using System.Net.Sockets;
 using System.Threading.Tasks;
 
-namespace EchoServer.BL.Implementation
+namespace Server.Core.BL.TcpSocketImplementation
 {
     public class TcpSocketStreamWrapper : ISocketStreamWrapper
     {

@@ -25,7 +25,16 @@ namespace Server.Core.BL.TcpSocketImplementation
 
         public override void ListenForClients()
         {
-            _listener.Start();
+            try
+            {
+                _listener.Start();
+            }
+            catch (SocketException)
+            {
+                _writer.Write("There's already a server bound to this IP and port.");
+                return;
+            }
+
             System.Threading.CancellationTokenSource source = new System.Threading.CancellationTokenSource();
 
             while (true)

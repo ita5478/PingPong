@@ -16,7 +16,6 @@ namespace Server.Core.BL.TcpSocketImplementation
         public void Close()
         {
             _socketStream.Close();
-            TcpClient client = new TcpClient();
         }
 
         public async Task<byte[]> ReadAsync(int bufferSize)

@@ -2,7 +2,7 @@
 using Common.Abstractions.IO;
 using System.Net.Sockets;
 
-namespace EchoClient.BL.Implementation.ClientActions
+namespace EchoClient.BL.Implementations.ClientActions
 {
     public class SendMessageToEchoServerAction : IClientAction
     {

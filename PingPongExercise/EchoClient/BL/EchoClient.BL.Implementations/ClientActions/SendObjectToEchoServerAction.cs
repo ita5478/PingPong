@@ -40,12 +40,13 @@ namespace EchoClient.BL.Implementations.ClientActions
 
                     Person person = new Person(name, age);
                     string serialized = JsonSerializer.Serialize(person);
-
+                    _userOutputWriter.Write(serialized);
                     _clientSocket.SendData(_stringToByteConverter.ConvertTo(serialized));
                     _userOutputWriter.Write($"Sent {serialized} to the server.");
 
                     var data = _clientSocket.ReadData(serialized.Length);
                     var receivedData = _stringToByteConverter.ConvertFrom(data);
+                    
                     object returnedObject = JsonSerializer.Deserialize<Person>(receivedData);
                     _userOutputWriter.Write($"The server returned {returnedObject.ToString()}.");
                 }

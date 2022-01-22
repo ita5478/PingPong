@@ -1,7 +1,7 @@
 ﻿using Client.BL.Core.Implementation;
 using Client.BL.Core.Policy;
 using Common.Implementations.Converters;
-using EchoClient.BL.Implementation.ClientActions;
+using EchoClient.BL.Implementations.ClientActions;
 using EchoClient.ConsoleUI.IO;
 
 namespace EchoClient.Startup
@@ -19,7 +19,7 @@ namespace EchoClient.Startup
             var socket = new TcpClientSocket();
 
             var connectionInitializer = new ServerConnectionInitializer(writer, socket);
-            var clientAction = new SendMessageToEchoServerAction(socket, writer, reader, stringToByteConverter);
+            var clientAction = new SendObjectToEchoServerAction(socket, writer, reader, stringToByteConverter);
 
             ClientRunner runner = new ClientRunner(connectionInitializer, clientAction, stringToIPConverter);
             return runner;

@@ -1,11 +1,10 @@
 ﻿
 namespace EchoClient.BL.Implementations
 {
-    [System.Serializable]
     public class Person
     {
-        private string _name;
-        private int _age;
+        public string _name { get; set; }
+        public int _age { get; set; }
 
         public Person(string name, int age)
         {
